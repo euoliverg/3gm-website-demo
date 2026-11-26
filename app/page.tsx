@@ -42,9 +42,9 @@ export default function Home() {
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="header">
       <div className="shell header-inner">
-        <a href="#main" className="brand">
-          <Image src={mediaPath("/media/3gm-logo.jpg")} alt="" width={48} height={48} unoptimized />
-          <span><strong>3GM</strong>{" "}<small>General Contracting Inc.</small></span>
+        <a href="#main" className="brand" aria-label="3GM General Contracting Inc., back to top">
+          <span className="brand-mark"><Image src={mediaPath("/media/3gm-mark.png")} alt="" width={240} height={167} unoptimized priority /></span>
+          <span className="brand-text"><strong>3GM</strong>{" "}<small>General Contracting Inc.</small></span>
         </a>
         <Navigation />
         <a href="#contact" className="button header-cta">Start a Project <span aria-hidden="true">↗</span></a>
@@ -124,6 +124,24 @@ export default function Home() {
         <ProjectForm />
       </section>
     </main>
-    <footer><div className="shell footer-inner"><strong>3GM General Contracting Inc.</strong><span>Vaughan, Ontario · © {new Date().getFullYear()}</span><a href="#main">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+    <footer>
+      <div className="shell footer-top">
+        <div className="footer-logo"><Image src={mediaPath("/media/3gm-logo-full.png")} alt="3GM General Contracting Inc." width={520} height={527} unoptimized loading="lazy" /></div>
+        <div className="footer-about">
+          <p>Commercial fit-outs, renovations, general contracting and project management for food service, health &amp; wellness and education.</p>
+          <a className="button button-brass" href="#contact">Start a Project <span aria-hidden="true">↗</span></a>
+        </div>
+        <nav className="footer-nav" aria-label="Footer navigation">
+          <span>Explore</span>
+          <a href="#work">Our Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a>
+        </nav>
+        <div className="footer-contact">
+          <span>Contact</span>
+          <p>Vaughan, Ontario<br />Serving Toronto, the GTA and across Ontario</p>
+          <a href="mailto:mario1976@hotmail.com">mario1976@hotmail.com</a>
+        </div>
+      </div>
+      <div className="shell footer-inner"><span>© {new Date().getFullYear()} 3GM General Contracting Inc.</span><a href="#main">Back to top <span aria-hidden="true">↑</span></a></div>
+    </footer>
   </>;
 }
