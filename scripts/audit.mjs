@@ -8,7 +8,7 @@ const browser = await chromium.launch({
   args: ["--remote-debugging-port=9222"],
 });
 try {
-  const result = await lighthouse("http://localhost:3000", {
+  const result = await lighthouse(process.env.DEMO_URL || "http://localhost:3000", {
     port: 9222,
     onlyCategories: ["performance", "accessibility", "seo"],
     output: "html",

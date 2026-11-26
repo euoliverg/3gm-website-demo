@@ -8,10 +8,12 @@ import { mediaPath } from "./media-path";
 const work: { spa: Photo[]; projects: { title: string; photos: Photo[] }[] } = media;
 
 const spa: Photo = {
+  caption: "Slatted walls and cove lighting",
   src: "/media/spa-liberty-village-01.webp",
   alt: "Liberty Village spa room with walnut-toned slatted walls, a stone counter, a vessel sink and cove lighting",
 };
 const spaHero: Photo = {
+  caption: "Stone, plaster and millwork",
   src: "/media/spa-liberty-village-03.webp",
   alt: "Completed Liberty Village spa room with a pebble-stone accent wall, wood cabinetry and a stone vessel sink",
 };
@@ -41,7 +43,7 @@ export default function Home() {
     <header className="header">
       <div className="shell header-inner">
         <a href="#main" className="brand">
-          <Image src={mediaPath("/media/3gm-logo.jpg")} alt="" width={46} height={46} />
+          <Image src={mediaPath("/media/3gm-mark.png")} alt="" width={48} height={48} unoptimized />
           <span><strong>3GM</strong>{" "}<small>General Contracting Inc.</small></span>
         </a>
         <Navigation />
@@ -53,7 +55,7 @@ export default function Home() {
         <div className="hero-visual"><HeroMedia photo={spaHero} video={video ? mediaPath(video) : undefined} /></div>
         <div className="shell hero-inner">
           <div className="hero-copy">
-          <p className="hero-location"><span></span> Vaughan · Toronto · Ontario</p>
+          <p className="hero-location"><span aria-hidden="true"></span> Commercial construction in Ontario</p>
           <h1 id="hero-title">We build the rooms your business runs in.</h1>
           <p className="hero-description">Commercial fit-outs and renovations across Ontario. 20+ years building spaces for food service, health &amp; wellness and education.</p>
           <div className="hero-actions">
@@ -81,14 +83,14 @@ export default function Home() {
       <section className="section work" id="work" aria-labelledby="work-title">
         <div className="shell">
           <div className="feature">
-            <div className="feature-photo"><Gallery photos={[spaHero, spa, ...work.spa]} label="Liberty Village Spa" /></div>
             <div className="feature-copy">
-              <p className="location">Liberty Village · Toronto</p>
+              <p className="location">Selected work <span aria-hidden="true">/</span> Toronto, Ontario</p>
               <h2 id="work-title">Liberty Village Spa</h2>
-              <p>Wood slats, textured plaster and warm lighting bring a consistent finish to rooms with different uses.</p>
-              <blockquote>“Once this space was constructed into a spa, a detailed finish was required in every room. Great team effort once again.”</blockquote>
+              <p>A commercial fit-out with a different finish story in each room, from pebble stone and plaster to wood slats and concealed lighting.</p>
             </div>
+            <blockquote>“Once this space was constructed into a spa, a detailed finish was required in every room. Great team effort once again.”</blockquote>
           </div>
+          <div className="feature-photo"><Gallery photos={[spa, spaHero, ...work.spa]} label="Liberty Village Spa" editorial /></div>
           <div className="other-work">
             <h3>More projects</h3>
             <div className="other-grid">
@@ -100,7 +102,7 @@ export default function Home() {
         </div>
       </section>
       <section className="section shell split" id="services" aria-labelledby="services-title">
-        <h2 id="services-title">Services</h2>
+        <div className="section-intro"><h2 id="services-title">Services</h2><p>Bring us in for a full fit-out or a defined renovation. We coordinate the trades and manage the work on site.</p><a className="text-link" href="#contact">Discuss your scope <span aria-hidden="true">↗</span></a></div>
         <div className="service-list">
           {services.map(([title, description]) => <article key={title}><h3>{title}</h3><p>{description}</p></article>)}
         </div>
@@ -117,17 +119,11 @@ export default function Home() {
         <div>
           <h2 id="contact-title">Start a project</h2>
           <p>Tell us about your space, the work you need and when you plan to open.</p>
-          <address><a href="mailto:mario1976@hotmail.com">mario1976@hotmail.com</a><span>Vaughan, Toronto, the GTA and across Ontario</span></address>
+          <address><span>Serving Vaughan, Toronto, the GTA and across Ontario</span><a href="mailto:mario1976@hotmail.com">mario1976@hotmail.com <span aria-hidden="true">↗</span></a></address>
         </div>
         <ProjectForm />
       </section>
     </main>
-    <footer><div className="shell footer-inner"><strong>3GM General Contracting Inc.</strong><span>Vaughan, Ontario · © {new Date().getFullYear()}</span></div></footer>
+    <footer><div className="shell footer-inner"><strong>3GM General Contracting Inc.</strong><span>Vaughan, Ontario · © {new Date().getFullYear()}</span><a href="#main">Back to top <span aria-hidden="true">↑</span></a></div></footer>
   </>;
 }
-
-
-
-
-
-

@@ -8,7 +8,7 @@ try {
     const errors = [];
     page.on("pageerror", error => errors.push(error.message));
     page.on("response", res => { if (res.status() >= 400) errors.push(res.status() + " " + res.url()); });
-    await page.goto("http://localhost:3000", {waitUntil:"networkidle"});
+    await page.goto(process.env.DEMO_URL || "http://localhost:3000", {waitUntil:"networkidle"});
     await page.evaluate(async () => {
       await document.fonts.ready;
       await Promise.all([...document.images].filter(img => img.getClientRects().length).map(async img => {
@@ -30,10 +30,12 @@ try {
       await page.getByRole("navigation").getByRole("link",{name:"Our Work"}).click();
       assert.equal(await page.getByRole("button",{name:"Menu",exact:true}).getAttribute("aria-expanded"), "false");
     }
-    const photo = page.getByRole("button",{name:/Enlarge photo/}).first();
+    const gallery = page.getByRole("button",{name:/Enlarge photo/});
+    const photos = await gallery.count();
+    assert.ok(photos >= 4, "The spa gallery includes all four project photos");
+    const photo = gallery.first();
     await photo.click();
     await page.getByRole("dialog").waitFor({state:"visible"});
-    const photos = await page.getByRole("button",{name:/Enlarge photo/}).count();
     if (photos > 1) {
       await page.keyboard.press("ArrowRight");
       assert.equal(await page.getByRole("dialog").locator("[aria-live=polite]").textContent(), "2 / " + photos);
@@ -41,8 +43,8 @@ try {
     await page.keyboard.press("Escape");
     assert.equal(await page.getByRole("dialog").count(),0);
     assert.equal(await photo.evaluate(el => document.activeElement === el),true);
-    await page.getByLabel("Name",{exact:true}).fill("Demo User");
-    await page.getByLabel("Email",{exact:true}).fill("demo@example.com");
+    await page.getByRole("textbox",{name:"Name",exact:true}).fill("Demo User");
+    await page.getByRole("textbox",{name:"Email",exact:true}).fill("demo@example.com");
     await page.getByLabel("Type of space").selectOption("Spa/Clinic/Studio");
     await page.getByLabel("Project details").fill("Commercial spa fit-out.");
     await page.getByRole("button",{name:/Submit Project Details/}).click();
@@ -52,5 +54,3 @@ try {
     await page.close();
   }
 } finally { await browser.close(); }
-
-

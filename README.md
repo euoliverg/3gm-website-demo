@@ -24,7 +24,8 @@ O formulário confirma o envio na tela. O ponto de integração está no handler
 | Arquivo | Origem e uso |
 | --- | --- |
 | public/media/3gm-logo.jpg | [Foto de perfil da 3GM no Facebook](https://www.facebook.com/photo/?fbid=122098021275547588), 1024 × 1024. |
-| public/media/favicon.png | Derivado da foto de perfil, 64 × 64. |
+| public/media/3gm-mark.png | Símbolo arquitetônico criado para a identidade visual da demo. |
+| public/media/favicon.png | Versão do novo símbolo, 64 × 64. |
 | public/media/spa-liberty-village-01.jpg | [Foto do spa no Facebook](https://www.facebook.com/photo/?fbid=122109576573547588), 1536 × 1536. |
 | public/media/spa-liberty-village-01.webp | Conversão da foto acima para a galeria.
 | public/media/spa-liberty-village-02.webp | [Montagem de obra em andamento](https://www.facebook.com/photo/?fbid=122109576567547588), reduzida de 4096 × 4096 para 1600 × 1600. |

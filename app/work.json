@@ -2,10 +2,12 @@
   "spa": [
     {
       "src": "/media/spa-liberty-village-04.webp",
+      "caption": "Timber detailing",
       "alt": "Spa room with timber slat wall paneling, oak-toned flooring and concealed ceiling lighting"
     },
     {
       "src": "/media/spa-liberty-village-02.webp",
+      "caption": "During construction",
       "alt": "Nine progress photos showing metal stud framing and unfinished rooms during the Liberty Village spa build"
     }
   ],
