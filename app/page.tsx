@@ -43,7 +43,7 @@ export default function Home() {
     <header className="header">
       <div className="shell header-inner">
         <a href="#main" className="brand">
-          <Image src={mediaPath("/media/3gm-mark.png")} alt="" width={48} height={48} unoptimized />
+          <Image src={mediaPath("/media/3gm-logo.jpg")} alt="" width={48} height={48} unoptimized />
           <span><strong>3GM</strong>{" "}<small>General Contracting Inc.</small></span>
         </a>
         <Navigation />
