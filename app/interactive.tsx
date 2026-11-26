@@ -53,7 +53,7 @@ export function Gallery({photos, label, editorial = false}: {photos: Photo[]; la
   }
   return <>
     <div className={editorial ? "gallery-grid gallery-editorial" : "gallery-grid"}>
-      {photos.map((photo, i) => <button key={photo.src} type="button" className="gallery-photo" aria-label={"Enlarge photo: " + photo.alt} onClick={(event) => {
+      {photos.map((photo, i) => <button key={photo.src} type="button" className="gallery-photo" aria-label={"Enlarge photo: " + (photo.caption ?? photo.alt)} onClick={(event) => {
         trigger.current = event.currentTarget;
         setIndex(i);
         setIsOpen(true);

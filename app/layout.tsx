@@ -14,15 +14,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
-  icons: { icon: mediaPath("/media/favicon.png") },
+  icons: { icon: mediaPath("/media/favicon.png?v=2") },
   openGraph: { title, description, type: "website", locale: "en_CA", images: [{ url: new URL(mediaPath("/media/spa-liberty-village-03.webp"), siteUrl), width: 1536, height: 1536, alt: "Completed Liberty Village spa interior" }] },
 };
 
 export default function Layout({children}: Readonly<{children: React.ReactNode}>) {
   return <html lang="en-US" className={heading.variable + " " + body.variable}><body>{children}</body></html>;
 }
-
-
-
-
-
