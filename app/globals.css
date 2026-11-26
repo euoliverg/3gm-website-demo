@@ -273,3 +273,11 @@ footer{padding:clamp(48px,7vw,88px) 0 0;background:var(--deep)}
   .brand-text small{font-size:.47rem;letter-spacing:.05em;margin-top:3px}
   .menu-toggle{padding:7px 4px}
 }
+
+/* Logo without background: light version of the original mark on dark surfaces */
+.brand-mark,.brand:hover .brand-mark{width:auto;height:auto;background:none;box-shadow:none;border-radius:0;transform:none}
+.brand .brand-mark img{width:50px;transition:opacity .25s ease}
+.brand:hover .brand-mark img{opacity:.85}
+.footer-logo{padding:0;background:none;box-shadow:none;border-radius:0}
+@media(max-width:760px){.brand .brand-mark img{width:40px}}
+@media(max-width:480px){.brand .brand-mark img{width:36px}}

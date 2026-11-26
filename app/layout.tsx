@@ -14,7 +14,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
-  icons: { icon: mediaPath("/media/favicon.png?v=3") },
+  icons: { icon: [
+    { url: mediaPath("/media/favicon.svg?v=4"), type: "image/svg+xml" },
+    { url: mediaPath("/media/favicon.png?v=4"), type: "image/png", sizes: "128x128" },
+  ] },
   openGraph: { title, description, type: "website", locale: "en_CA", images: [{ url: new URL(mediaPath("/media/spa-liberty-village-03.webp"), siteUrl), width: 1536, height: 1536, alt: "Completed Liberty Village spa interior" }] },
 };
 

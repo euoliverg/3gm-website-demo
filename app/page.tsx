@@ -43,7 +43,7 @@ export default function Home() {
     <header className="header">
       <div className="shell header-inner">
         <a href="#main" className="brand" aria-label="3GM General Contracting Inc., back to top">
-          <span className="brand-mark"><Image src={mediaPath("/media/3gm-mark.png")} alt="" width={240} height={167} unoptimized priority /></span>
+          <span className="brand-mark"><Image src={mediaPath("/media/3gm-mark-light.png")} alt="" width={240} height={167} unoptimized priority /></span>
           <span className="brand-text"><strong>3GM</strong>{" "}<small>General Contracting Inc.</small></span>
         </a>
         <Navigation />
@@ -126,7 +126,7 @@ export default function Home() {
     </main>
     <footer>
       <div className="shell footer-top">
-        <div className="footer-logo"><Image src={mediaPath("/media/3gm-logo-full.png")} alt="3GM General Contracting Inc." width={520} height={527} unoptimized loading="lazy" /></div>
+        <div className="footer-logo"><Image src={mediaPath("/media/3gm-logo-full-light.png")} alt="3GM General Contracting Inc." width={520} height={527} unoptimized loading="lazy" /></div>
         <div className="footer-about">
           <p>Commercial fit-outs, renovations, general contracting and project management for food service, health &amp; wellness and education.</p>
           <a className="button button-brass" href="#contact">Start a Project <span aria-hidden="true">↗</span></a>
